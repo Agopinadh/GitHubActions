@@ -33,7 +33,7 @@ jobs:
         run: terraform validate -no-color
 
       - name: Terraform Plan
-        run: terraform plan -out=tfplan
+        run: terraform plan 
 
       # Manual Approval
       - name: Terraform Approval
@@ -46,4 +46,4 @@ jobs:
           issue-body: "Please review and approve Terraform Apply."
 
       - name: Terraform Destroy
-        run: terraform destroy -auto-approve tfplan
+        run: terraform destroy -auto-approve 

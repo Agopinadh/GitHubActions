@@ -45,5 +45,5 @@ jobs:
           issue-title: "Terraform Apply Approval"
           issue-body: "Please review and approve Terraform Apply."
 
-      - name: Terraform Apply
-        run: terraform apply -auto-approve tfplan
+      - name: Terraform Destroy
+        run: terraform destroy -auto-approve tfplan

@@ -35,15 +35,18 @@ jobs:
       - name: Terraform Plan
         run: terraform plan 
 
-      # # Manual Approval
-      # - name: Terraform Approval
-      #   uses: trstringer/manual-approval@v1
-      #   with:
-      #     secret: ${{ github.token }}
-      #     approvers: Agopinadh
-      #     minimum-approvals: 1
-      #     issue-title: "Terraform Apply Approval"
-      #     issue-body: "Please review and approve Terraform Apply."
+      # Manual Approval
+      - name: Terraform Approval
+        uses: trstringer/manual-approval@v1
+        with:
+          secret: ${{ github.token }}
+          approvers: Agopinadh
+          minimum-approvals: 1
+          issue-title: "Terraform Apply Approval"
+          issue-body: "Please review and approve Terraform Apply."
 
-      - name: Terraform Destroy
-        run: terraform destroy -auto-approve 
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+
+      # - name: Terraform Destroy
+      #   run: terraform destroy -auto-approve

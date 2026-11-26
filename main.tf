@@ -8,3 +8,13 @@ resource "aws_instance" "dev" {
   Name = "Chariot"
   }
 }
+
+terraform {
+  backend "s3" {
+    bucket       = "bucket-state9"
+    key          = "terraform/state.tfstate"
+    region       = "us-east-1"
+    encrypt      = true
+    use_lockfile = true
+  }
+}
